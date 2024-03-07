@@ -1,0 +1,9 @@
+body{
+    background-color: #EEDEDE;
+    font-family: "Bricolage Grotesque", sans-serif;
+    overflow-x: hidden;
+}
+
+a{
+    cursor: pointer;
+}
