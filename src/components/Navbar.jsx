@@ -1,10 +1,19 @@
 import React from "react";
+import { useEffect,useRef } from 'react'
+import {gsap} from "gsap"
+import {headerArrival} from "./animation"
 
-function Navbar() {
+function Navbar({timeline}) {
+  const headerref=useRef(null)
+
+  useEffect(() =>{
+    
+  })
   return (
     <div
       id="nav"
       className="text-[#EF4C4C] flex items-center justify-between px-[24px] py-[16px]"
+      ref={headerref}
     >
       <div id="nav_logo_div" className="">
         <a id="nav_logo_link" href="" className="">

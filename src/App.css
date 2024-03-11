@@ -7,3 +7,12 @@ body{
 a{
     cursor: pointer;
 }
+
+::-webkit-scrollbar{
+    width: 3px;
+    background: #FFFF;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #E04C4C;
+}

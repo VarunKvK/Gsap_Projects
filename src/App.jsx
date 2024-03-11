@@ -1,23 +1,28 @@
 import './App.css'
-import Arrivals from './components/Arrivals'
-import Category from './components/Category'
-import Collab from './components/Collab'
-import Header from './components/Header'
-import Navbar from './components/Navbar'
-import Newsletter from './components/Newsletter'
-import Social from './components/Social'
 
+import { useEffect,useLayoutEffect,useState } from 'react'
+import {gsap} from "gsap";
+import ThePage from './components/ThePage';
+import Loader from './components/Loader';
+ 
 function App() {
+  const [loaderFinished, setloader]=useState(false)
+  const [timeline, settimeline]=useState(null)
+  const [data, setdata]=useState(false)
+
+  useEffect(() => {
+    const t1 = gsap.timeline({
+      onComplete: () => setloader(true)
+    });
+
+    settimeline(t1);
+    setdata(true)
+    return () => t1.kill(); // Use kill() instead of revert()
+  }, []);
 
   return (
     <>
-      <Navbar/>
-      <Header/>
-      <Arrivals/>
-      <Category/>
-      <Collab/>
-      <Newsletter/>
-      <Social/>
+    {!loaderFinished? <Loader timeline={timeline}/>:<ThePage data={data} timeline={timeline}/>}
     </>
   )
 }

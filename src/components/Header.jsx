@@ -1,7 +1,11 @@
 import React from 'react'
 import RedGas from '../assets/Home/RedGas.webp'
+import { useEffect,useRef } from 'react'
+import {gsap} from "gsap"
+import {headerArrival} from "./animation"
 
-function Header() {
+function Header({timeline}) {
+
   return (
     <div className='px-[24px] grid grid-row-3 w-full'>
         <div className="m-[-4rem]" id='tag_line'>
