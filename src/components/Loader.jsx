@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { introLoader, collapseWords } from "./animation";
+import { introLoader } from "./animation";
 
 function Loader({ timeline }) {
   const redloaderef = useRef(null);
@@ -9,7 +9,7 @@ function Loader({ timeline }) {
 
   useEffect(() => {
     timeline &&
-      timeline.add(introLoader(redloaderef,wloaderef)).add(collapseWords(redloaderef,wloaderef,textref));
+      timeline.add(introLoader(redloaderef,wloaderef))
   }, [timeline]);
 
   return (

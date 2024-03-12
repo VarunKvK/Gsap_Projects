@@ -7,18 +7,18 @@ import Navbar from "./Navbar";
 import Newsletter from "./Newsletter";
 import Social from "./Social";
 
-function ThePage({ data,timeline }) {
-  return data ? (
+function ThePage({timeline }) {
+  return (
     <div>
       <Navbar timeline={timeline}/>
-      <Header />
-      <Arrivals />
-      <Category />
-      <Collab />
-      <Newsletter />
-      <Social />
+      <Header timeline={timeline}/>
+      <Arrivals timeline={timeline}/>
+      <Category timeline={timeline}/>
+      <Collab timeline={timeline}/>
+      <Newsletter timeline={timeline}/>
+      <Social timeline={timeline}/>
     </div>
-  ) : null;
+  )
 }
 
 export default ThePage;

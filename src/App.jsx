@@ -16,13 +16,12 @@ function App() {
     });
 
     settimeline(t1);
-    setdata(true)
     return () => t1.kill(); // Use kill() instead of revert()
   }, []);
 
   return (
     <>
-    {!loaderFinished? <Loader timeline={timeline}/>:<ThePage data={data} timeline={timeline}/>}
+    {!loaderFinished? <Loader timeline={timeline}/>:<ThePage timeline={timeline}/>}
     </>
   )
 }

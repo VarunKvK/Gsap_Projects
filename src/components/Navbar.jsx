@@ -1,19 +1,20 @@
 import React from "react";
 import { useEffect,useRef } from 'react'
 import {gsap} from "gsap"
-import {headerArrival} from "./animation"
+import {navArrival} from "./Pageanimation"
 
 function Navbar({timeline}) {
-  const headerref=useRef(null)
+  const navref=useRef(null)
 
   useEffect(() =>{
-    
-  })
+    timeline &&
+    timeline.add(navArrival(navref),2)
+  },[timeline])
   return (
     <div
       id="nav"
-      className="text-[#EF4C4C] flex items-center justify-between px-[24px] py-[16px]"
-      ref={headerref}
+      className="text-[#EF4C4C] flex items-center justify-between px-[24px] py-[16px] relative -top-[100px] opacity-0"
+      ref={navref}
     >
       <div id="nav_logo_div" className="">
         <a id="nav_logo_link" href="" className="">
